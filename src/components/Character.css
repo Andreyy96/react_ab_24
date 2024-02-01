@@ -1,0 +1,12 @@
+.person {
+    width: 450px;
+    text-align: center;
+    margin: 15px 15px;
+    border: 1px solid black;
+    background: rgb(128, 128, 128);
+
+}
+
+img {
+    margin-top: 7px;
+}
