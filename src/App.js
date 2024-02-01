@@ -41,7 +41,15 @@ const App = () => {
     ];
     return (
         <div>
-            {simpsons.map((simpson, index) =><Simpson simpson={simpson} key={index}/>)}
+            {simpsons.map((simpson, index) =><Simpson
+                name={simpson.name}
+                surname={simpson.surname}
+                age={simpson.age}
+                info={simpson.info}
+                photo={simpson.photo}
+                key={index}
+            />)}
+            {/*{simpsons.map((simpson, index) =><Simpson simpson={simpson} key={index}/>)}*/}
         </div>
     );
 };
