@@ -11,9 +11,12 @@ const Launches = () => {
         launchesService.getAll().then(({data}) => setLaunches(data))
     }, []);
 
+
+    let filterlaunches = launches.filter(value => value.launch_year !== "2020")
+
     return (
         <div className={css.launches}>
-            {launches.map((launch, index) =>  <Launch launch={launch} key={index}/>)}
+            {filterlaunches.map((launch, index) =>  <Launch launch={launch} key={index}/>)}
         </div>
     );
 };
