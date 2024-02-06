@@ -1,0 +1,11 @@
+.post_info {
+    width: 400px;
+    border: 1px solid black;
+    background: midnightblue;
+    color: white;
+    padding-right: 20px;
+}
+
+p {
+    margin-left: 20px;
+}

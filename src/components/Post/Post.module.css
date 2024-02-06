@@ -1,0 +1,7 @@
+.post {
+    width: 280px;
+    border: 1px solid black;
+    background: darkgrey;
+    text-align: center;
+    margin-left: 10px;
+}
