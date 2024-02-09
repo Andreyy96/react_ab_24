@@ -13,7 +13,7 @@ const CommentsFolder = () => {
 
     return (
         <div>
-            <CommentForm/>
+            <CommentForm setComments={setComments}/>
             <Comments comments={comments}/>
         </div>
     );
