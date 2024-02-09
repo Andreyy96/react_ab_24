@@ -13,7 +13,7 @@ const UsersBlock = () => {
 
     return (
         <div>
-            <UserForm/>
+            <UserForm setUsers={setUsers}/>
             <Users users={users}/>
         </div>
     );

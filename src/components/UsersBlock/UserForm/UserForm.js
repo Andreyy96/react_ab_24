@@ -3,12 +3,12 @@ import {useForm} from "react-hook-form";
 import {userService} from "../../../services/userService";
 import css from "./UserForm.module.css"
 
-const UserForm = () => {
+const UserForm = ({setUsers}) => {
     const {register, reset, handleSubmit, formState: {isValid}} = useForm();
 
 
     const createUser =  (user) => {
-        userService.postUser(user).then(({data}) => console.log(data))
+        userService.postUser(user).then(({data})=> setUsers(prev=>[...prev, data]));
         reset()
     }
 
