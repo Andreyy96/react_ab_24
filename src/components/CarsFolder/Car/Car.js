@@ -3,8 +3,8 @@ import {carService} from "../../../services/carService";
 const Car = ({car, setCarForUpdate, setTrigger}) => {
     const {id, brand, price, year} = car
 
-    let deleteCAR = () => {
-        carService.deleteCar(id)
+    let deleteCAR = async () => {
+        await carService.deleteCar(id)
         setTrigger(prev => prev === false)
     }
 

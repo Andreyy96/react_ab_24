@@ -20,9 +20,9 @@ const CarForm = ({setTrigger, carForUpdate, setCarForUpdate}) => {
         }
     }, [carForUpdate]);
 
-    const updateCAR = (data) => {
+    const updateCAR = async (data) => {
         const id  = carForUpdate.id
-        carService.updateCar(id, data)
+        await carService.updateCar(id, data)
         setTrigger(prev => !prev)
         setCarForUpdate(null)
         reset()
@@ -47,7 +47,7 @@ const CarForm = ({setTrigger, carForUpdate, setCarForUpdate}) => {
                     min: 1990,
                     max: new Date().getFullYear()
                 })}/>
-                <button disabled={!isValid}>save</button>
+                <button disabled={!isValid}>{carForUpdate ? 'update' : 'create'}</button>
             </form>
         </div>
     );
