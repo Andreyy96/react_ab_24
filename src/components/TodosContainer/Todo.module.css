@@ -1,0 +1,10 @@
+.todo {
+    width: 230px;
+    border: 1px solid black;
+    margin-left: 10px;
+    background: linen;
+}
+
+.todo p {
+    margin-left: 15px;
+}
