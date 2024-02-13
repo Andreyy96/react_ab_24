@@ -4,7 +4,7 @@ const Album = ({album}) => {
     const {userId, id, title} = album
 
     return (
-        <div className={css.module}>
+        <div className={css.album}>
             <p>userId: {userId}</p>
             <p>id: {id}</p>
             <p>title: {title}</p>
