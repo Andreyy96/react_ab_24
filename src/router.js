@@ -12,25 +12,18 @@ import {postService} from "./services/postService";
 const router = createBrowserRouter([
     {path: '', element: <MainLayouts/>, children: [
             {index: true, element: <Navigate to={'users'}/>},
-            {path: 'users', element: <UsersPage/>,
-                loader: () => userService.getAll(),
+            {path: 'users', element: <UsersPage/>, loader: () => userService.getAll()},
+            {path: 'users/:id', element: <UserDetailsPage/>, loader: ({params: {id}}) => userService.getById(id),
                 children: [
-                    {path: ':id', element: <UserDetailsPage/>,
-                        loader: ({params: {id}}) => userService.getById(id),
-                        children: [
-                            {path: 'posts', element: <UserPostsPage/>,
-                                loader: ({params: {id}}) => userService.getPostsById(id),
-                                children: [
-                                    {path: ':id', element: <PostDetailsPage/>,
-                                        loader: ({params: {id}}) =>postService.getById(id),
-                                        children: [
-                                            {path:'comments', element: <PostCommentsPage/>,
-                                                loader: ({params: {id}}) => postService.getCommentsById(id)}
-                                        ]}
-                                ]}
-                        ]}
+                    {path: 'posts', element: <UserPostsPage/>, loader: ({params: {id}}) => userService.getPostsById(id)}]},
+            {path: 'post/:id', element: <PostDetailsPage/>,
+                loader: ({params: {id}}) =>postService.getById(id),
+                children: [
+                    {path:'comments', element: <PostCommentsPage/>,
+                        loader: ({params: {id}}) => postService.getCommentsById(id)}
                 ]}
-        ]}
+            ]
+    }
 ])
 
 export {router}
