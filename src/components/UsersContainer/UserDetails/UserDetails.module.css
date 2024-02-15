@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.details {
+    width: 380px;
+    padding-bottom: 10px;
+    border: 1px solid green;
+}
+
+.marginLeft {
+    margin-left: 5px;
+}
+
+.elementObject {
+    margin-left: 15px;
+}
+
+.details button {
+    margin: auto;
+    display: block;
+}
