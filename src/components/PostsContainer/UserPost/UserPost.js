@@ -11,7 +11,7 @@ const UserPost = ({post}) => {
     return (
         <div className={css.userPost}>
             <h5>{title}</h5>
-            <button onClick={() => navigate('/post/'+ id.toString() + '/comments', {state: {id}})}>show post details</button>
+            <button onClick={() => navigate('/posts/'+ id.toString() + '/comments', {state: {id}})}>show post details</button>
         </div>
     );
 };
