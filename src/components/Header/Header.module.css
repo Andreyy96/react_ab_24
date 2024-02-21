@@ -1,6 +1,7 @@
 .Title {
+    display: -moz-deck;
+    justify-content: center;
     background: black;
-    text-align: center;
     color: white;
 }
 

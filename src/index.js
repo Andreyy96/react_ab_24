@@ -3,14 +3,14 @@ import {RouterProvider} from "react-router-dom";
 
 import './index.css';
 import {router} from "./router";
-import {ContextTrigger} from "./hoc";
+import {ContextParam} from "./hoc";
 
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ContextTrigger>
+    <ContextParam>
         <RouterProvider router={router}/>
-    </ContextTrigger>
+    </ContextParam>
 );

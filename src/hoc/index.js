@@ -1,1 +1,2 @@
-export * from "./ContextTrigger"
+export * from "./ContextParams"
+export * from "./useAppContext"

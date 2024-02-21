@@ -11,6 +11,7 @@ const urls = {
     characters: {
         link: characters,
         byId: (id) => `${characters}/${id}`,
+        byIds: (ids) => `${characters}/${ids}`,
         byURL: (url) => url
     }
 }
