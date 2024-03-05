@@ -7,7 +7,6 @@ import {carsActions} from "../../store";
 import {carValidator} from "../../validators";
 import {carService} from "../../services";
 
-
 const CarForm = () => {
     const {register, reset, handleSubmit,  formState: {isValid, errors}, setValue} = useForm({
         mode: "all",
@@ -17,7 +16,8 @@ const CarForm = () => {
     const dispatch = useDispatch()
 
     const createCar = async (car) => {
-        await carService.postCar(car)
+        // await carService.postCar(car)
+        dispatch(carsActions.post(car))
         dispatch(carsActions.setTrigger(prev => !prev))
         reset()
     }
@@ -32,7 +32,8 @@ const CarForm = () => {
 
 
     const updateCAR = async (car) => {
-        await carService.updateCar(carForUpdate.id, car)
+        // await carService.deleteCar(carForUpdate.id, car)
+        dispatch(carsActions.update({id: carForUpdate.id, car}))
         dispatch(carsActions.setCarForUpdate(null))
         dispatch(carsActions.setTrigger(prev => !prev))
         reset()

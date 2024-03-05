@@ -8,9 +8,9 @@ const Car = ({car}) => {
     const {id, brand, price, year} = car
     const dispatch = useDispatch()
 
-
     const deleteCar = async () => {
-        await carService.delete(id)
+        // await carService.deleteCar(id)
+        await dispatch(carsActions.delete(id))
         dispatch(carsActions.setTrigger(prev => !prev))
     }
 

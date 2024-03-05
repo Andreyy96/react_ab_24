@@ -1,9 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {carService} from "../../services";
 
 const initialState = {
     cars: [],
     carForUpdate: null,
-    trigger: false
+    trigger: false,
 }
 
 const carsSlice = createSlice({
@@ -18,6 +19,15 @@ const carsSlice = createSlice({
         },
         setTrigger: (state, action) => {
             state.trigger = action.payload
+        },
+        post: (state, action) => {
+            carService.postCar(action.payload)
+        },
+        update: (state, action) => {
+            carService.updateCar(action.payload.id, action.payload.car)
+        },
+        delete: (state, action) => {
+           carService.deleteCar(action.payload)
         }
     }
 })
