@@ -7,7 +7,7 @@ const initialState = {
     trigger: false,
 }
 
-const carsSlice = createSlice({
+const carSlice = createSlice({
     name: "carSlice",
     initialState,
     reducers: {
@@ -18,21 +18,13 @@ const carsSlice = createSlice({
             state.carForUpdate = action.payload
         },
         setTrigger: (state, action) => {
-            state.trigger = action.payload
-        },
-        post: (state, action) => {
-            carService.postCar(action.payload)
-        },
-        update: (state, action) => {
-            carService.updateCar(action.payload.id, action.payload.car)
-        },
-        delete: (state, action) => {
-           carService.deleteCar(action.payload)
+            state.trigger= !action.payload
+            console.log(state.trigger)
         }
     }
 })
 
-const {reducer: carsReducer, actions} = carsSlice;
+const {reducer: carsReducer, actions} = carSlice;
 
 const carsActions = {
     ...actions

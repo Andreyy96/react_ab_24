@@ -13,6 +13,7 @@ const Cars = () => {
         carService.getAll().then(({data}) => dispatch(carsActions.setCars(data)))
     }, [dispatch, trigger]);
 
+    console.log(cars)
     return (
         <div>
             {cars.map(car => <Car car={car} key={car.id}/>)}
