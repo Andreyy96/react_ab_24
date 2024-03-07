@@ -1,0 +1,10 @@
+.Title {
+    display: flex;
+    justify-content: center;
+    background: black;
+    color: white;
+}
+
+h1 {
+    margin-top: 0;
+}
